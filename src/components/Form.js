@@ -1,12 +1,41 @@
 import React, { useState } from "react";
-import {TextField, Button, MenuItem} from "@mui/material";
-import {useNavigate} from 'react-router-dom';
-
-
+import {
+  TextField,
+  Button,
+  MenuItem,
+  IconButton,
+  Snackbar,
+  Alert,
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import { useNavigate } from "react-router-dom";
 
 import classes from "./Form.module.css";
 
 const Form = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  const action = (
+    <React.Fragment>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
+
   // create state variables for each input
   const [id, setID] = useState("");
   const [type, setType] = useState(0);
@@ -16,16 +45,38 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(id, reason);
-    if(type === 0){
-      fetch('https://whispering-eyrie-86232.herokuapp.com/riders/'+id, { method: 'DELETE' })
-    }
-    else if(type === 1){
-      fetch('https://whispering-eyrie-86232.herokuapp.com/drivers/'+id, { method: 'DELETE' })
-    }
+    if (type === 0) {
+      fetch("https://whispering-eyrie-86232.herokuapp.com/riders/" + id, {
+        method: "DELETE",
+      })
+        .then((response) => {
+          console.log(response);
+          if (response.status === 500) {
+            setOpen(true);
+          } else {
+            navigate("/home");
+          }
+        })
+        .catch(() => {
+          setOpen(true);
+        });
+    } else if (type === 1) {
+      fetch("https://whispering-eyrie-86232.herokuapp.com/drivers/" + id, {
+        method: "DELETE",
+      })
+        .then((response) => {
+          console.log(response);
 
-    navigate('/home');
-
-    
+          if (response.status === 500) {
+            setOpen(true);
+          } else {
+            navigate("/home");
+          }
+        })
+        .catch(() => {
+          setOpen(true);
+        });
+    }
   };
 
   return (
@@ -77,6 +128,18 @@ const Form = () => {
           </Button>
         </div>
       </form>
+
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message="Failed to remove"
+        action={action}
+      >
+        <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
+          Failed to remove. Please try again.
+        </Alert>
+      </Snackbar>
     </div>
   );
 };

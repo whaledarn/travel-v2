@@ -1,7 +1,7 @@
 import * as React from "react";
 import ActionCard from "./ActionCard";
 import classes from "./CardGrid.module.css";
-import { Grid, Button } from '@mui/material';
+import { Grid, Button, Box } from '@mui/material';
 
 
 export default function ActionCardGrid(props) {
@@ -10,9 +10,9 @@ export default function ActionCardGrid(props) {
     <div className={classes.grid}>
       <h2>Select your driver</h2>
       <h3>{props.driver===""?"None": props.drivers.find(x => x._id === props.driver).firstName} {props.driver===""?"": props.drivers.find(x => x._id === props.driver).lastName} selected</h3>
-
+      <Box className={classes.smallbox}>
       <Grid
-        className={classes.flex}
+        className={classes.container}
         container
         spacing={2}
         justifyContent="center"
@@ -33,6 +33,7 @@ export default function ActionCardGrid(props) {
           </Grid>
         ))}
       </Grid>
+      </Box>
       <div className={classes.but}>
         <Button onClick={props.submitForm} variant="contained" color="primary">
           Sign up

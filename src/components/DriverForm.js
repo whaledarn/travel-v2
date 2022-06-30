@@ -18,6 +18,7 @@ const DriverForm = () => {
   const [notes, setNotes] = useState("");
   const navigate = useNavigate();
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -125,8 +126,8 @@ const DriverForm = () => {
           variant="filled"
           onChange={(e) => setChurch(e.target.value)}
         >
-          {constants.churches.map((c) => (
-            <MenuItem key={c}>{c}</MenuItem>
+          {constants.churches.map((c, index) => (
+            <MenuItem key={c} value={index}>{c}</MenuItem>
           ))}
         </TextField>
 
@@ -139,8 +140,8 @@ const DriverForm = () => {
           variant="filled"
           onChange={(e) => setTime(e.target.value)}
         >
-          {constants.times[church].map((t) => (
-            <MenuItem key={t}>{t}</MenuItem>
+          {constants.times[church].map((t, index) => (
+            <MenuItem key={t} value={index}>{t}</MenuItem>
           ))}
         </TextField>
           </div>

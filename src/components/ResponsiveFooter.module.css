@@ -1,0 +1,32 @@
+.divider{
+    border: none;
+    /* top    */ border-top: 1px solid #ccc;
+    /* middle */ background-color: #ddd; color: #ddd;
+    /* bottom */ border-bottom: 1px solid #eee;
+    height: 1px;
+    *height: 3px; /* IE6+7 need the total height */
+    
+}
+
+.text{
+    margin-left:5%;
+}
+
+.items{
+    margin-right:5%;
+    vertical-align: middle;
+}
+
+.footer {
+    flex-shrink: 0;
+    padding-top: 35px;
+    /* text-align: center; */
+    /* background-color: rgb(226, 226, 226); */
+    color: rgb(53, 53, 53);
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+  
+  }

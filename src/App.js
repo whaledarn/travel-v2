@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
+import ResponsiveFooter from "./components/ResponsiveFooter";
 import Loading from "react-simple-loading";
 
 const Home = React.lazy(() => import("./pages/Home.js"));
@@ -12,6 +13,7 @@ const Rider = React.lazy(() => import("./pages/Rider.js"));
 const Error = React.lazy(() => import("./pages/Error.js"));
 
 function App() {
+
   return (
     <React.Fragment>
       <ResponsiveAppBar></ResponsiveAppBar>
@@ -27,6 +29,7 @@ function App() {
           <Route path="error" element={<Error />}></Route>
         </Routes>
       </Suspense>
+      <ResponsiveFooter></ResponsiveFooter>
     </React.Fragment>
   );
 }

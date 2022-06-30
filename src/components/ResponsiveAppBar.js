@@ -1,7 +1,16 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
 
-import {AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Button, MenuItem} from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Menu,
+  Container,
+  Button,
+  MenuItem,
+} from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -32,7 +41,7 @@ const ResponsiveAppBar = () => {
   return (
     <AppBar position="static">
       <Container className={classes.header} maxWidth="xl">
-        <Toolbar  disableGutters>
+        <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -63,15 +72,21 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography key={page} textAlign="center">{page}</Typography>
-                </MenuItem>
+                <NavLink key={page} className={classes.nav} to={"/" + page}>
+                  <Button
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "rgb(88, 88, 88)", display: "block" }}
+                  >
+                    {page}
+                  </Button>
+                </NavLink>
               ))}
             </Menu>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <NavLink key= {page} className={classes.nav} to={"/" + page}>
+              <NavLink key={page} className={classes.nav} to={"/" + page}>
                 {" "}
                 <Button
                   key={page}
@@ -84,9 +99,13 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0, display: "flex"}}>
-
-              <Button onClick={handleOpenUserMenu} sx={{ my: 2, color: "rgb(88, 88, 88)", display: "block" }}>Sign Up</Button>
+          <Box sx={{ flexGrow: 0, display: "flex" }}>
+            <Button
+              onClick={handleOpenUserMenu}
+              sx={{ my: 2, color: "rgb(88, 88, 88)", display: "block" }}
+            >
+              Sign Up
+            </Button>
 
             <Menu
               sx={{ mt: "45px" }}
@@ -104,10 +123,13 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <NavLink key={setting} className={classes.nav_black} to={"/" + setting}>
+                  <NavLink
+                    key={setting}
+                    className={classes.nav_black}
+                    to={"/" + setting}
+                  >
                     {"Sign up as " + setting}
                   </NavLink>
                 </MenuItem>

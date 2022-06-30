@@ -1,5 +1,5 @@
 import * as React from "react";
-import Grid from "@mui/material/Grid";
+import {Grid, Box} from "@mui/material";
 import BasicCard from "./BasicCard";
 import Loading from "react-simple-loading";
 
@@ -9,18 +9,19 @@ export default function CardGrid(props) {
   return (
     <div className={classes.grid}>
       <h2>View Current Signups</h2>
+      <Box className={classes.box}>
       <Grid
-        className={classes.flex}
+        className={classes.container}
         container
         spacing={2}
         justifyContent="flex-start"
         alignItems="stretch"
       >
         {props.items.length === 0 ? (
-          <Loading />
+          <Loading/>
         ) : (
           props.items.map((driver) => (
-            <Grid key={driver._id} item xs={12} sm={6} md={4} style={{ display: "flex" }}>
+            <Grid item key={driver._id} xs={12} sm={6} md={4} style={{ display: "flex" }}>
               <BasicCard
                 firstName={driver.firstName}
                 lastName={driver.lastName}
@@ -36,6 +37,7 @@ export default function CardGrid(props) {
           ))
         )}
       </Grid>
+      </Box>
     </div>
   );
 }
