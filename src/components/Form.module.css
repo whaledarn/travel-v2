@@ -1,0 +1,36 @@
+.root {
+    /* display: 'flex'; */
+    /* flex-direction: 'column'; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* margin: 50px; */
+
+    padding: 50px;
+    /* background:blue; */
+  }
+
+.but{
+    padding-top: 10px;
+}
+.form{
+  width: 60%;
+  text-align:left;
+}
+
+.form2{
+  width: 30%;
+  text-align:left;
+}
+.form3{
+  width: 20%;
+  text-align:left;
+}
+
+
+.second{
+  display: none;
+}
+.first{
+  display: inline;
+}
