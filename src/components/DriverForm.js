@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {TextField, Button, MenuItem} from "@mui/material";
+import { TextField, Button, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import * as constants from "../churchConstants.js";
 
@@ -17,7 +17,6 @@ const DriverForm = () => {
   const [quantity, setQuantity] = useState();
   const [notes, setNotes] = useState("");
   const navigate = useNavigate();
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -87,16 +86,15 @@ const DriverForm = () => {
           />
         </div>
         <TextField
-            className={classes.form}
-            label="Email Address"
-            variant="filled"
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          className={classes.form}
+          label="Email Address"
+          variant="filled"
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <div>
-
           <TextField
             className={classes.form2}
             label="Phone Number"
@@ -106,68 +104,71 @@ const DriverForm = () => {
             value={number}
             onChange={(e) => setNumber(e.target.value)}
           />
-                  <TextField
-          className={classes.form2}
-          label="UTEID"
-          variant="filled"
-          required
-          value={id}
-          onChange={(e) => setID(e.target.value)}
-        />
+          <TextField
+            className={classes.form2}
+            label="UTEID"
+            variant="filled"
+            required
+            value={id}
+            onChange={(e) => setID(e.target.value)}
+          />
         </div>
 
         <div>
-        <TextField
-          className={classes.form2}
-          select
-          label="Church"
-          required
-          value={church}
-          variant="filled"
-          onChange={(e) => setChurch(e.target.value)}
-        >
-          {constants.churches.map((c, index) => (
-            <MenuItem key={c} value={index}>{c}</MenuItem>
-          ))}
-        </TextField>
+          <TextField
+            className={classes.form2}
+            select
+            label="Church"
+            required
+            value={church}
+            variant="filled"
+            onChange={(e) => setChurch(e.target.value)}
+          >
+            {constants.churches.map((c, index) => (
+              <MenuItem key={c} value={index}>
+                {c}
+              </MenuItem>
+            ))}
+          </TextField>
 
-        <TextField
-          className={classes.form2}
-          select
-          label="Time"
-          required
-          value={time}
-          variant="filled"
-          onChange={(e) => setTime(e.target.value)}
-        >
-          {constants.times[church].map((t, index) => (
-            <MenuItem key={t} value={index}>{t}</MenuItem>
-          ))}
-        </TextField>
-          </div>
-
-        <div>
-        <TextField
-          className={classes.form2}
-          label="How many people can you take?"
-          variant="filled"
-          type="number"
-          required
-          value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
-        />
-
-        <TextField
-          className={classes.form2}
-          label="Notes"
-          variant="filled"
-          required
-          value={notes}
-          onChange={(e) => setNotes(e.target.value)}
-        />
+          <TextField
+            className={classes.form2}
+            select
+            label="Time"
+            required
+            value={time}
+            variant="filled"
+            onChange={(e) => setTime(e.target.value)}
+          >
+            {constants.times[church].map((t, index) => (
+              <MenuItem key={t} value={index}>
+                {t}
+              </MenuItem>
+            ))}
+          </TextField>
         </div>
 
+        <div>
+          <TextField
+            className={classes.form2}
+            label="How many people can you take?"
+            variant="filled"
+            type="number"
+            required
+            InputProps={{ inputProps: { min: 0, max: 6 } }}
+            value={quantity}
+            onChange={(e) => setQuantity(e.target.value)}
+          />
 
+          <TextField
+            className={classes.form2}
+            label="Notes"
+            variant="filled"
+            required
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+          />
+        </div>
 
         <div className={classes.but}>
           <Button type="submit" variant="contained" color="primary">
