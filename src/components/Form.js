@@ -81,7 +81,6 @@ const Form = () => {
 
   return (
     <div className={classes.root}>
-      <h4>Edit your signup</h4>
       <form onSubmit={handleSubmit}>
         <div>
           <TextField

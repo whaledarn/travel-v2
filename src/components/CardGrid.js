@@ -8,7 +8,6 @@ import classes from "./CardGrid.module.css";
 export default function CardGrid(props) {
   return (
     <div className={classes.grid}>
-      <h2>View Current Signups</h2>
       <Box className={classes.box}>
       <Grid
         className={classes.container}

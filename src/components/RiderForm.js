@@ -89,7 +89,6 @@ const RiderForm = () => {
   return (
     <div className={classes.root}>
       <div className={classes.first}>
-        <h4>Sign up as a Rider</h4>
         <form onSubmit={handleSubmit}>
           <div>
             <TextField

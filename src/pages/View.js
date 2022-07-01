@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CardGrid from "../components/CardGrid";
+import TitleCard from "../components/TitleCard";
+
 
 const View = () => {
   const [drivers, setDrivers] = useState([]);
@@ -26,9 +28,12 @@ const View = () => {
       setRiders(data);
       }
 
-  return <CardGrid 
+  return <React.Fragment>
+     <TitleCard title="View Current Signups"></TitleCard>
+     <CardGrid 
   items={drivers}
-  riders={riders}/>;
+  riders={riders}/>
+    </React.Fragment>;
 };
 
 export default View;

@@ -65,7 +65,6 @@ const DriverForm = () => {
 
   return (
     <div className={classes.root}>
-      <h4>Sign up as a Driver</h4>
       <form className={classes.formguide} onSubmit={handleSubmit}>
         <div>
           <TextField

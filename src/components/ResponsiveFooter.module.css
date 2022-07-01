@@ -10,6 +10,12 @@
 
 .text{
     margin-left:5%;
+    display:inline-block
+}
+.textright{
+    float:right;
+    margin-right: 5%;
+    display:inline-block
 }
 
 .items{
