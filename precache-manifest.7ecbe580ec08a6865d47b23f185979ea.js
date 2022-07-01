@@ -40,12 +40,12 @@ self.__precacheManifest = [
     "url": "/travel-v2/static/js/6.2b0aaef2.chunk.js"
   },
   {
-    "revision": "0d98fc0c2e2c0db60be3",
+    "revision": "f40e5856ec5eeb870ff2",
     "url": "/travel-v2/static/css/7.86315979.chunk.css"
   },
   {
-    "revision": "0d98fc0c2e2c0db60be3",
-    "url": "/travel-v2/static/js/7.0d98fc0c.chunk.js"
+    "revision": "f40e5856ec5eeb870ff2",
+    "url": "/travel-v2/static/js/7.f40e5856.chunk.js"
   },
   {
     "revision": "3ed8fd461f1aed5b8db1",
@@ -72,11 +72,11 @@ self.__precacheManifest = [
     "url": "/travel-v2/static/js/11.16c96942.chunk.js"
   },
   {
-    "revision": "91a40938bc5c14b7251a",
-    "url": "/travel-v2/static/js/runtime~main.91a40938.js"
+    "revision": "226a95ec32506e070846",
+    "url": "/travel-v2/static/js/runtime~main.226a95ec.js"
   },
   {
-    "revision": "610982272724a5c7d002bba31b8d0ce7",
+    "revision": "0f2ca1d057add02a771234cc64f6392f",
     "url": "/travel-v2/index.html"
   }
 ];
