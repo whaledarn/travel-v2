@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{166:function(e,n,t){"use strict";t.r(n);var u=t(0);n.default=function(){return u.createElement("div",null,u.createElement("h2",null,"LOGIN TO VIEW STUFF"))}}}]);
-//# sourceMappingURL=6.2b0aaef2.chunk.js.map
