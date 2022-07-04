@@ -1,12 +1,8 @@
-import * as React from 'react';
-
-import TitleCard from "../components/TitleCard";
+import * as React from "react";
+import LoginDriver from "../components/LoginDriver";
 
 const Login = () => {
-    return <div>
-         <TitleCard title="Login as Driver"></TitleCard>
-        <h2>LOGIN TO VIEW STUFF</h2>
-    </div>;
-  };
-  
-  export default Login;
+  return <LoginDriver></LoginDriver>;
+};
+
+export default Login;

@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
 import ResponsiveFooter from "./components/ResponsiveFooter";
+import DriverInfo from "./components/DriverInfo";
 import Loading from "react-simple-loading";
 
 const Home = React.lazy(() => import("./pages/Home.js"));
@@ -11,6 +12,7 @@ const Login = React.lazy(() => import("./pages/Login.js"));
 const Driver = React.lazy(() => import("./pages/Driver.js"));
 const Rider = React.lazy(() => import("./pages/Rider.js"));
 const Error = React.lazy(() => import("./pages/Error.js"));
+const Nonexistent = React.lazy(() => import("./pages/Nonexistent.js"));
 
 function App() {
 
@@ -24,9 +26,11 @@ function App() {
           <Route path="view" element={<View />}></Route>
           <Route path="edit" element={<Edit />}></Route>
           <Route path="login" element={<Login />}></Route>
+          <Route path="welcome/:id" element={<DriverInfo/>}></Route>
           <Route path="driver" element={<Driver />}></Route>
           <Route path="rider/*" element={<Rider />}></Route>
           <Route path="error" element={<Error />}></Route>
+          <Route path="*" element={<Nonexistent />}></Route>
         </Routes>
       </Suspense>
       <ResponsiveFooter></ResponsiveFooter>
