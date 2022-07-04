@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{109:function(e,t,n){"use strict";n.d(t,"a",function(){return a});var i=n(0),r=n(110),l=n.n(r);function a(e){return i.createElement("div",{className:l.a.title},i.createElement("h1",null,e.title))}},110:function(e,t,n){e.exports={title:"TitleCard_title__1AIc5"}},173:function(e,t,n){"use strict";n.r(t);var i=n(0),r=n(109);t.default=function(){return i.createElement("div",null,i.createElement(r.a,{title:"Login as Driver"}),i.createElement("h2",null,"LOGIN TO VIEW STUFF"))}}}]);
-//# sourceMappingURL=6.4ce45b08.chunk.js.map
