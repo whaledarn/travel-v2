@@ -1,8 +1,8 @@
 import * as React from "react";
-import RiderForm from "../components/RiderForm";
-import TitleCard from "../components/TitleCard";
+import RiderForm from "../components/forms/RiderForm";
+import TitleCard from "../components/cards/TitleCard";
 
-
+/* Sign up As Rider Tab */
 
 const Rider = () => {
   return (

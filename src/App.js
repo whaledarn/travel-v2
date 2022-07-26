@@ -21,16 +21,16 @@ function App() {
       <ResponsiveAppBar></ResponsiveAppBar>
       <Suspense fallback={<Loading></Loading>}>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />}></Route>
-          <Route path="home" element={<Home />}></Route>
-          <Route path="view" element={<View />}></Route>
-          <Route path="edit" element={<Edit />}></Route>
-          <Route path="login" element={<Login />}></Route>
-          <Route path="welcome/:id" element={<DriverInfo/>}></Route>
-          <Route path="driver" element={<Driver />}></Route>
-          <Route path="rider/*" element={<Rider />}></Route>
-          <Route path="error" element={<Error />}></Route>
-          <Route path="*" element={<Nonexistent />}></Route>
+          <Route path="/" element={<Navigate to="/home" />}></Route> {/* navigates to home */}
+          <Route path="home" element={<Home />}></Route> {/* navigates to home */}
+          <Route path="view" element={<View />}></Route> {/* navigates to view all signups */}
+          <Route path="edit" element={<Edit />}></Route> {/* navigates to edit signup page */}
+          <Route path="login" element={<Login />}></Route> {/* navigates to log in page for drivers */}
+          <Route path="welcome/:id" element={<DriverInfo/>}></Route> {/* navigates to driver page when logged in */}
+          <Route path="driver" element={<Driver />}></Route> {/* navigates to driver sign up page */}
+          <Route path="rider/*" element={<Rider />}></Route> {/* navigates to rider sign up page */}
+          <Route path="error" element={<Error />}></Route> {/* navigates to error page when signing up */}
+          <Route path="*" element={<Nonexistent />}></Route> {/* navigates to nonexistent page */}
         </Routes>
       </Suspense>
       <ResponsiveFooter></ResponsiveFooter>

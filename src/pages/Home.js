@@ -1,6 +1,8 @@
 import * as React from "react";
-import TitleCard from "../components/TitleCard";
-import InfoCard from "../components/InfoCard";
+import TitleCard from "../components/cards/TitleCard";
+import InfoCard from "../components/cards/InfoCard";
+
+/* Info Page Tab/ Home Tab */
 
 const Home = () => {
   return (

@@ -1,6 +1,8 @@
 import * as React from "react";
 import classes from "./ErrorPage.module.css";
 
+/* Error page for when id exists */
+
 export default function ErrorPage() {
   return (
     <div className={classes.fof}>

@@ -1,6 +1,8 @@
 import * as React from "react";
 import classes from "./ErrorPage.module.css";
 
+/* Page Does Not Exist */
+
 export default function DNE() {
   return (
     <div className={classes.fof}>

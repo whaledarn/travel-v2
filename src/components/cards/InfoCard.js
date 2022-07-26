@@ -3,6 +3,7 @@ import {Card, CardContent, Typography} from "@mui/material";
 
 import classes from "./InfoCard.module.css";
 
+/* Simple info card for home page */
 
 export default function InfoCard(props) {
   return (

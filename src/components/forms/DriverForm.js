@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { TextField, Button, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import * as constants from "../churchConstants.js";
+import * as constants from "../../churchConstants.js";
 
 import classes from "./Form.module.css";
+
+/* Log in as Driver */
 
 const DriverForm = () => {
   // create state variables for each input
@@ -18,24 +20,11 @@ const DriverForm = () => {
   const [notes, setNotes] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { // submitting form
     e.preventDefault();
 
-    var jsonData = {
-      userid: id,
-      first: firstName,
-      last: lastName,
-      email: email,
-      phone: number,
-      church: church,
-      time: time,
-      quantity: quantity,
-      notes: notes,
-    };
-    console.log(jsonData);
-    fetch("https://whispering-eyrie-86232.herokuapp.com/drivers", {
-      // Enter your IP address here
-
+ 
+    fetch("https://whispering-eyrie-86232.herokuapp.com/drivers", { // posting to database
       method: "POST",
       mode: "cors",
       headers: {
@@ -54,13 +43,13 @@ const DriverForm = () => {
       }),
     })
       .then((response) => {
-        if (response.status === 500) navigate("/error");
+        if (response.status === 500) navigate("/error"); // if error, navigate to error page
       })
       .catch(() => {
         navigate("/error");
       });
 
-    navigate("/home");
+    navigate("/home"); // otherwise navigate to home page
   };
 
   return (

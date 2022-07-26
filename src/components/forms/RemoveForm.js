@@ -12,10 +12,12 @@ import { useNavigate } from "react-router-dom";
 
 import classes from "./Form.module.css";
 
-const Form = () => {
-  const [open, setOpen] = useState(false);
+/* Form to remove your sign up */
 
-  const handleClose = (event, reason) => {
+const RemoveForm = () => {
+  const [open, setOpen] = useState(false); // determines whether or not the error message on bottom left pops up
+
+  const handleClose = (event, reason) => { // handles closing the error message on bottom left
     if (reason === "clickaway") {
       return;
     }
@@ -23,7 +25,7 @@ const Form = () => {
     setOpen(false);
   };
 
-  const action = (
+  const action = ( // button on the bottom left to close error message
     <React.Fragment>
       <IconButton
         size="small"
@@ -42,25 +44,25 @@ const Form = () => {
   const [reason, setReason] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { // when submit is pressed
     e.preventDefault();
     console.log(id, reason);
-    if (type === 0) {
+    if (type === 0) { // if rider
       fetch("https://whispering-eyrie-86232.herokuapp.com/riders/" + id, {
         method: "DELETE",
       })
         .then((response) => {
           console.log(response);
-          if (response.status === 500) {
+          if (response.status === 500) { // if error, then pop up error message
             setOpen(true);
-          } else {
+          } else { // otherwise successfully remove and navigate to home
             navigate("/home");
           }
         })
         .catch(() => {
           setOpen(true);
         });
-    } else if (type === 1) {
+    } else if (type === 1) { // else if driver
       fetch("https://whispering-eyrie-86232.herokuapp.com/drivers/" + id, {
         method: "DELETE",
       })
@@ -143,4 +145,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default RemoveForm;

@@ -1,8 +1,10 @@
 import * as React from "react";
 import {Card, CardContent, Typography, Divider} from "@mui/material";
-import * as constants from "../churchConstants.js";
+import * as constants from "../../churchConstants.js";
 
-export default function BasicCard(props) {
+/* Card in View Tab that shows a driver and all its riders */
+
+export default function ViewCard(props) {
   function getEmpty() {
     let content = [];
     for (let i = 0; i < props.quantity - props.riderslist.length; i++) {

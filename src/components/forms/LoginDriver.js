@@ -8,14 +8,16 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
-import TitleCard from "./TitleCard.js"
+import TitleCard from "../cards/TitleCard.js"
 
 import classes from "./Form.module.css";
 
-const Form = () => {
-  const [open, setOpen] = useState(false);
+/* Login in form for Drivers */
 
-  const handleClose = (event, reason) => {
+const LoginDriver = () => {
+  const [open, setOpen] = useState(false); // determines if error message is opened or not
+
+  const handleClose = (event, reason) => { // handle closing the error message
     if (reason === "clickaway") {
       return;
     }
@@ -23,7 +25,7 @@ const Form = () => {
     setOpen(false);
   };
 
-  const action = (
+  const action = ( // button for error message
     <React.Fragment>
       <IconButton
         size="small"
@@ -55,7 +57,7 @@ const Form = () => {
             if (res.status === 500) {
               setOpen(true);
             } else {
-              navigate("/welcome/" + id, {driver: response.json(), riders: res.json()});
+              navigate("/welcome/" + id, {driver: response.json(), riders: res.json()}); // holds the driver and list or riders
             }
           })
           .catch(() => {
@@ -108,4 +110,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default LoginDriver;

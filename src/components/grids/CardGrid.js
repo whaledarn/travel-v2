@@ -1,9 +1,11 @@
 import * as React from "react";
 import {Grid, Box} from "@mui/material";
-import BasicCard from "./BasicCard";
+import ViewCard from "../cards/ViewCard";
 import Loading from "react-simple-loading";
 
 import classes from "./CardGrid.module.css";
+
+/* Grid that holds all drivers and riders in View Tab */
 
 export default function CardGrid(props) {
   return (
@@ -21,7 +23,7 @@ export default function CardGrid(props) {
         ) : (
           props.items.map((driver) => (
             <Grid item key={driver._id} xs={12} sm={6} md={4} style={{ display: "flex" }}>
-              <BasicCard
+              <ViewCard
                 firstName={driver.firstName}
                 lastName={driver.lastName}
                 notes={driver.notes}

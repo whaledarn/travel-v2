@@ -1,8 +1,10 @@
 import * as React from "react";
 import {Card, CardContent, Typography, CardActionArea} from "@mui/material";
-import * as constants from "../churchConstants.js";
+import * as constants from "../../churchConstants.js";
 
-export default function ActionCard(props) {
+/* Card that shows an available driver's information on second page of rider sign up */
+
+export default function RiderSignUpCard(props) {
   const getID = () => {
     props.addDriver(props.id);
   };

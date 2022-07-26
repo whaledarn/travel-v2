@@ -1,7 +1,8 @@
 import * as React from 'react';
-import DriverForm from "../components/DriverForm"
-import TitleCard from "../components/TitleCard";
+import DriverForm from "../components/forms/DriverForm"
+import TitleCard from "../components/cards/TitleCard";
 
+/* Login as Driver Tab */
 
 const Driver = () => {
     return <React.Fragment>

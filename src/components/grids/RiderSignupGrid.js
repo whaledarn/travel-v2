@@ -1,10 +1,11 @@
 import * as React from "react";
-import ActionCard from "./ActionCard";
+import RiderSignUpCard from "../cards/RiderSignupCard";
 import classes from "./CardGrid.module.css";
 import { Grid, Button, Box } from '@mui/material';
 
+/* Grid that holds all available drivers in rider sign up page */
 
-export default function ActionCardGrid(props) {
+export default function RiderSignUpGrid(props) {
 
   return (
     <div className={classes.grid}>
@@ -20,7 +21,7 @@ export default function ActionCardGrid(props) {
       >
         {props.drivers.map((driver) => (
           <Grid item xs={12} sm={6} md={4} key={driver._id}>
-            <ActionCard
+            <RiderSignUpCard
               addDriver={props.addDriver}
               id={driver._id}
               firstName={driver.firstName}
@@ -29,7 +30,7 @@ export default function ActionCardGrid(props) {
               riders={driver.riders}
               church={driver.church}
               time={driver.time}
-            ></ActionCard>
+            ></RiderSignUpCard>
           </Grid>
         ))}
       </Grid>

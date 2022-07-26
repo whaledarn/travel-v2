@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import CardGrid from "../components/CardGrid";
-import TitleCard from "../components/TitleCard";
+import CardGrid from "../components/grids/CardGrid";
+import TitleCard from "../components/cards/TitleCard";
 
 
 const View = () => {
