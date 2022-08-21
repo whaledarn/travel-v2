@@ -57,7 +57,7 @@ const LoginDriver = () => {
             if (res.status === 500) {
               setOpen(true);
             } else {
-              navigate("/welcome/" + id, {driver: response.json(), riders: res.json()}); // holds the driver and list or riders
+              navigate("/welcome/" + id, {id: id});
             }
           })
           .catch(() => {
@@ -102,7 +102,7 @@ const LoginDriver = () => {
           action={action}
         >
           <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
-            Failed to remove. Please try again.
+            Driver ID not found. Please try again.
           </Alert>
         </Snackbar>
       </div>

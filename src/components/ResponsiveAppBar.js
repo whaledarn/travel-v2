@@ -1,6 +1,5 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
-
 import {
   AppBar,
   Box,
@@ -11,10 +10,10 @@ import {
   Button,
   MenuItem,
 } from "@mui/material";
-
 import MenuIcon from "@mui/icons-material/Menu";
-
 import classes from "./ResponsiveAppBar.module.css";
+
+/* header navigation bar */
 
 const pages = ["home", "view", "edit", "login"];
 const settings = ["driver", "rider"];
@@ -39,7 +38,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar style={{ background: '#e3f2fd' }} position="static">
       <Container className={classes.header} maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

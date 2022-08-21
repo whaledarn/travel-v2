@@ -2,6 +2,8 @@ import * as React from "react";
 
 import classes from "./ResponsiveFooter.module.css";
 
+/* Footer on all Pages */
+
 export default function ResponsiveFooter() {
   return (
     <footer className={classes.footer}>
